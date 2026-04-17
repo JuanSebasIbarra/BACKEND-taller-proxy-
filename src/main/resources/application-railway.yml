@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: railway
+
+server:
+  port: ${PORT:8080}
+
+app:
+  cors:
+    allowed-origins:
+      - ${CORS_ALLOWED_ORIGINS}
+

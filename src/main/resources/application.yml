@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: Proxy
+
+server:
+  port: ${PORT:8080}
+
+app:
+  upgrade-url: ${UPGRADE_URL:/pricing}
+  cors:
+    allowed-origins:
+      - ${CORS_ALLOWED_ORIGINS:http://localhost:3000}
+  plans:
+    free:
+      requests-per-minute: ${PLAN_FREE_RPM:10}
+      monthly-tokens: ${PLAN_FREE_TOKENS_MONTH:50000}
+      unlimited: false
+    pro:
+      requests-per-minute: ${PLAN_PRO_RPM:60}
+      monthly-tokens: ${PLAN_PRO_TOKENS_MONTH:500000}
+      unlimited: false
+    enterprise:
+      requests-per-minute: -1
+      monthly-tokens: -1
+      unlimited: true
+
